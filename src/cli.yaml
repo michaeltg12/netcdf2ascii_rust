@@ -1,0 +1,39 @@
+name: netcdf2ascii-rust
+version: "0.1"
+author: Michael Giansiracusa <giansiracumt@ornl.gov>
+about: Used durring data ordering in orchestration with ADRS for converting cdf/nc files to ascii csv.
+args:
+    - Datastream:
+        short: d
+        long: datastream
+        value_name: datastream
+        help: The datastream to process.
+        required: true
+    - InputDir:
+        short: i
+        long: in_dir
+        value_name: in_dir
+        help: The directory where the input files are.
+        required: true
+    - Start:
+        short: s
+        long: start
+        value_name: start
+        help: The start time to begin processing from.
+        required: false
+    - End:
+        short: e
+        long: end
+        value_name: end
+        help: The end time to begin processing from.
+        required: false
+subcommands:
+    - test:
+        about: controls testing features
+        version: "0.1"
+        author: Michael G. <giansiracumt@ornl.gov>
+        args:
+            - debug:
+                short: d
+                long: debug
+                help: print debug information
